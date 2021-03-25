@@ -1,0 +1,226 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    font-family: Garamond;
+    color: #222220;
+    touch-action: none;
+    fill: #222220;
+}
+
+body {
+    display: grid;
+}
+
+#background {
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: FloralWhite;
+    align-content: center;
+    justify-content: center;
+}
+
+#container {
+    justify-self: center;
+    align-self: center;
+    width: min-content;
+    height: min-content;
+    display: grid;
+    grid-gap: 2rem;
+}
+
+h1 {
+    justify-self: center;
+    font-size: 3rem;
+}
+
+h3 {
+    justify-self: center;
+    font-size: 1.8rem;
+    font-style: italic;
+}
+
+#spiral-svg {
+    width: 30rem;
+    height: 30rem;
+    overflow: visible;
+    pointer-events: none;
+    transform: scale(1);
+}
+
+#sliders {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 0.7rem;
+}
+
+#sliders .number {
+    justify-self: right;
+}
+
+#sliders input[type=range] {
+    grid-column: 1 / 3;
+    margin-bottom: 0.7rem;
+    margin-top: -0.25rem;
+}
+
+#animate-buttons {
+    display: grid;
+    justify-self: right;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column: 2;
+    grid-gap: 1.2rem;
+    margin-top: -0.9rem;
+    margin-right: 0.2rem;
+}
+
+#animate-buttons svg {
+    width: 1.2rem;
+    height: 1.2rem;
+    cursor: pointer;
+    overflow: visible;
+    justify-self: center;
+    align-self: center;
+}
+
+#animate-buttons polygon {
+    transform: translateX(0rem);
+    transition: transform 0.2s;
+}
+
+#animate-buttons .pause {
+    visibility: hidden;
+}
+
+#animate-buttons .animate-0 .pause {
+    visibility: visible;
+}
+
+#animate-buttons .animate-0 .play-1,
+#animate-buttons .animate-0 .play-2,
+#animate-buttons .animate-0 .play-3 {
+    visibility: hidden;
+}
+
+#animate-buttons .animate-0 .pause {
+    visibility: visible;
+}
+
+#animate-buttons .animate-2 .play-1 {
+    transform: translateX(0.0125rem);
+}
+
+#animate-buttons .animate-2 .play-2 {
+    transform: translateX(-0.0125rem);
+}
+
+#animate-buttons .animate-2 .play-3 {
+    transform: translateX(-0.0125rem);
+}
+
+#animate-buttons .animate-3 .play-1 {
+    transform: translateX(0.025rem);
+}
+
+#animate-buttons .animate-3 .play-2 {
+    transform: translateX(0rem);
+}
+
+#animate-buttons .animate-3 .play-3 {
+    transform: translateX(-0.025rem);
+}
+
+#phi-button {
+    margin-top: -0.75rem;
+    font-size: 1.9rem;
+    cursor: pointer;
+    width: 1rem;
+    justify-self: center;
+}
+
+h2 {
+    font-size: 1.8rem;
+}
+
+
+input[type=range] {
+    -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+    width: 100%; /* Specific width is required for Firefox. */
+    background: transparent; /* Otherwise white in Chrome */
+    height: 1.5rem;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+}
+
+input[type=range]:focus {
+    outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+}
+
+input[type=range]::-ms-track {
+    width: 100%;
+    cursor: pointer;
+
+    /* Hides the slider so custom styles can be added */
+    background: transparent; 
+    border-color: transparent;
+    color: transparent;
+}
+
+/* Special styling for WebKit/Blink */
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 1.6rem;
+    width: 1.6rem;
+    border-radius: 0.8rem;
+    background-color: #333330;
+    cursor: pointer;
+    border: 0.25rem solid #333330;
+    margin-top: -0.7rem; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+}
+   
+input[type=range]:hover::-webkit-slider-thumb {
+    background-color: #fffff0;
+}
+
+input[type=range]:focus::-webkit-slider-thumb {
+    background-color: #fffff0;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 0.2rem;
+  cursor: pointer;
+  background-color: #333330;
+  border-radius: 0.1rem;
+}
+
+/* All the same stuff for Firefox */
+input[type=range]::-moz-range-thumb {    
+    height: 1.1rem;
+    width: 1.1rem;
+    border-radius: 0.8rem;
+    background-color: #333330;
+    cursor: pointer;
+    border: 0.25rem solid #333330;
+}
+   
+input[type=range]:hover::-moz-range-thumb {
+    background-color: #fffff0;
+}
+
+input[type=range]:focus::-moz-range-thumb {
+    background-color: #fffff0;
+}
+
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 0.2rem;
+  cursor: pointer;
+  background-color: #333330;
+  border-radius: 0.1rem;
+}
